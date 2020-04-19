@@ -13,31 +13,29 @@
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://codex.wordpress.org/Editing_wp-config.php
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
  *
  * @package WordPress
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'testwordpress_db');
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
- define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+define( 'DB_NAME', 'testwordpress_db' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root');
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'root');
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost');
+define( 'DB_HOST', 'localhost' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8');
+define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '');
+define( 'DB_COLLATE', '' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -48,14 +46,14 @@ define( 'DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '46262cd86e4b2e8f8ac8157e9d921e3ddd19d673');
-define( 'SECURE_AUTH_KEY',  'b249f6f5ed34608b97aca77c218ce9c95cb133bb');
-define( 'LOGGED_IN_KEY',    '816bd9fe427019031b3739d511596503aa8ed8cb');
-define( 'NONCE_KEY',        '8f45d72ec83ee5259a8f68ef86a1601614969c2d');
-define( 'AUTH_SALT',        '59fda100cf78a7138fe72bdcc811501723e7345f');
-define( 'SECURE_AUTH_SALT', 'd387d0e7fbaffb2cc619b2fd7be21a97bb5f6c33');
-define( 'LOGGED_IN_SALT',   '15910e23ee6c8bbee28e2aea031f722d22f2e6b8');
-define( 'NONCE_SALT',       '292c24a35ada9361eaa9923fd9fdb56db7c5184b');
+define( 'AUTH_KEY',         '<9W%o-^A[x)0z8qJG,38%9]nRYkcV$m8(zV:i,R]F/C6,Ed.nI;CS<]m*5P_|{/.' );
+define( 'SECURE_AUTH_KEY',  '4+q&^NWlE0FkMPLtVBx.fh!ock!*2!7X-iTO-_PC=@c!xCSz&2zu>iC4DOWbyaP#' );
+define( 'LOGGED_IN_KEY',    '5*Ab`]ca1<$(}qJ;TC4x//>&Jiurpg;Y]yIv(LbsCAuZ5(.PF3S-G[^-QV#bCvj0' );
+define( 'NONCE_KEY',        'a9.JL)Y|X5l2A]gt:d<yBKl|5fY@6tJ3=EG}Vw*|)^i{r#d}ZdE[]:9&@ s4+4!x' );
+define( 'AUTH_SALT',        ',%*L!5fJSZG|(f(*2&v|6SGKiL)tg!6:Dua%Wk/BP}>1NOFl[DjHMRf`6o[.7:@G' );
+define( 'SECURE_AUTH_SALT', 'U!k<jk?i}m[!Ol/]Fb/?|_Pv>GYDfOC:S-[7Tf4vK*cb# f4% >ox56&j7Yo$=tl' );
+define( 'LOGGED_IN_SALT',   'Y-5A=dce9{!.2jI@6$gnDZeB)0O]ZeMV7B(~t#/~M8ozaykH(Ps`1ky}_34@aJvu' );
+define( 'NONCE_SALT',       'e1:Jd4/Z7<0nm:/&?/aNxi2S|NXmDKAh9L|q*%k&p*eLETbZhniR{sq;[Qxv~#S4' );
 
 /**#@-*/
 
@@ -75,24 +73,18 @@ $table_prefix = 'wp_';
  * in their development environments.
  *
  * For information on other constants that can be used for debugging,
- * visit the Codex.
+ * visit the documentation.
  *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-
-// If we're behind a proxy server and using HTTPS, we need to alert Wordpress of that fact
-// see also http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-	$_SERVER['HTTPS'] = 'on';
-}
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+	define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
-require_once( ABSPATH . 'wp-settings.php' );
+require_once ABSPATH . 'wp-settings.php';

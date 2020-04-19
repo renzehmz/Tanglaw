@@ -1,2 +1,0 @@
-# Testwordpress
-For Educational Purposes
